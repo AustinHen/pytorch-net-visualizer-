@@ -1,15 +1,8 @@
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as pl 
 import numpy as np
 import torch 
 
 class NNVisulizer:
-    POS_COLOR = "b"
-    NEG_COLOR = "r"
-    MIN_WEIGHT = -1
-    MAX_WEIGHT = 1
-    MIN_NODE = -1
-    MAX_NODE = 1 
-
     def __init__(self):
         self.weights = []
         self.nodes = []
