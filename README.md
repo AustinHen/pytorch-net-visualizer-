@@ -1,4 +1,3 @@
- PyTorch Neural Net Visualizer
 This tool creates visual representations of neural networks (as pictured below)
 
 <img width="683" height="703" alt="demo-1" src="https://github.com/user-attachments/assets/e46c8f49-87b0-44cf-899e-e244c6188223" />
