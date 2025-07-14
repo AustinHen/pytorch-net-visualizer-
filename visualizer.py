@@ -1,4 +1,4 @@
-import matplotlib.pyplot as pl 
+import matplotlib.pyplot as plt
 import numpy as np
 import torch 
 
@@ -29,7 +29,6 @@ class NNVisulizer:
         self.nodes = []
         return self
 
-    #TODO fix bug where all weights ingoing to a node are the same
     def render(self, with_data=False):
         if with_data:
             assert len(self.nodes) == 1 + len(self.weights), "incorrect number of node layers"
@@ -99,7 +98,7 @@ class NNVisulizer:
                     if not self.weight_is_cutoff(cur_weight_val):
                         plt.plot(xs, ys, color=_color, zorder=1, linewidth = _width)
 
-        #shows plot
+        #shows plot 
         plt.show()
 
     def update_sizes(self):

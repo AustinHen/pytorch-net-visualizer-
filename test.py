@@ -3,13 +3,15 @@ import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
 import torch.nn.functional as F 
+import time
 
 def run_all_tests():
     x = nn.Linear(28*28, 64).weight
     print(x[0,0])
     ##tester = visualizer.NNVisulizer()
     ##tester.render_no_data()
-    test_2()
+    #test_1()
+    test_3()
 
 def test_1():
     print("running test 1") 
@@ -26,6 +28,19 @@ def test_2():
         tester.add_weight_layer(layer.weight)
     inp = torch.randn((10))
     forward(layers, inp, tester)
+
+def test_3():
+    layers = []
+    tester = visualizer.NNVisulizer()
+    layers.append(nn.Linear(10, 10)) 
+    layers.append(nn.Linear(10, 5)) 
+    for layer in layers:
+        tester.add_weight_layer(layer.weight)
+    inp = torch.randn((10))
+    for i in range(10):
+        forward(layers, inp, tester)
+        tester.clear_nodes();
+        time.sleep(3);
 
 def forward(layers, inp, v):
     v.add_node_layer(inp)
